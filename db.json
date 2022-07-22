@@ -1,0 +1,10 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Curso Quasar Crud",
+      "author": "thiago prado",
+      "content": "curso sobre vue js e quasar"
+    }
+  ]
+}
