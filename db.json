@@ -5,6 +5,12 @@
       "title": "Curso Quasar Crud",
       "author": "thiago prado",
       "content": "curso sobre vue js e quasar"
+    },
+    {
+      "id": 3,
+      "title": "Curso Quasar Crud",
+      "author": "vinicius crisol",
+      "content": "curso sobre vue js e quasar"
     }
   ]
 }
