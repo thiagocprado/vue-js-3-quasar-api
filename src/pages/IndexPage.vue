@@ -1,12 +1,24 @@
 <template>
   <q-page padding>
-    <q-table title="Treats" :rows="posts" :columns="columns" row-key="name">
+    <q-table :rows="posts" :columns="columns" row-key="name">
+      <template v-slot:top>
+        <span class="text-h5">Artigos</span>
+        <q-space />
+        <q-btn color="primary" label="Novo artigo" :to="{ name: 'formPost' }" />
+      </template>
       <template v-slot:body-cell-actions="props">
-        <q-td :props="props">
+        <q-td :props="props" class="q-gutter-sm">
           <q-btn
             @click="handleDeletePost(props.row.id)"
             icon="delete"
             color="negative"
+            dense
+            size="sm"
+          />
+          <q-btn
+            @click="handleEditPost(props.row.id)"
+            icon="edit"
+            color="info"
             dense
             size="sm"
           />
@@ -19,13 +31,15 @@
 <script>
 import { defineComponent, ref, onMounted } from 'vue'
 import { useQuasar } from 'quasar'
+import { useRouter } from 'vue-router'
 import postsService from 'src/services/posts'
 
 export default defineComponent({
   name: 'IndexPage',
   setup () {
-    const posts = ref([])
     const { list, remove } = postsService()
+    const router = useRouter()
+    const posts = ref([])
     const columns = [
       { name: 'id', field: 'id', label: 'Id', sortable: true, align: 'left' },
       { name: 'title', field: 'title', label: 'Título', sortable: true, align: 'left' },
@@ -66,10 +80,15 @@ export default defineComponent({
       }
     }
 
+    const handleEditPost = (id) => {
+      router.push({ name: 'formPost', params: { id } })
+    }
+
     return {
       posts,
       columns,
-      handleDeletePost
+      handleDeletePost,
+      handleEditPost
     }
   }
 })

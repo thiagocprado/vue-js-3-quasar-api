@@ -8,9 +8,21 @@
     },
     {
       "id": 3,
-      "title": "Curso Quasar Crud",
-      "author": "vinicius crisol",
+      "title": "Curso Quasar Crud 4",
+      "author": "vinicius poloni crisol",
       "content": "curso sobre vue js e quasar"
+    },
+    {
+      "title": "teste",
+      "content": "teste",
+      "author": "teste",
+      "id": 4
+    },
+    {
+      "title": "novo teste",
+      "content": "este vai ser o novo artigo teste",
+      "author": "teste de novo",
+      "id": 5
     }
   ]
 }
